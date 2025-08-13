@@ -3676,3 +3676,179 @@ article {
 .read-the-docs {
   color: #888;
 }
+
+/* Social Media Links Styling */
+.social-media-links {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(30, 30, 30, 0.5);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-media-links h3 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.social-media-hint {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-input {
+  position: relative;
+}
+
+.social-input label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  margin-right: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Social Media Container in ViewCreator */
+.social-media-container {
+  margin: 1.5rem 0;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  background: rgba(30, 30, 30, 0.8);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+}
+
+.social-link.youtube {
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(30, 30, 30, 0.8));
+}
+
+.social-link.youtube:hover {
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.3), rgba(40, 40, 40, 0.9));
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+}
+
+.social-link.twitter {
+  background: linear-gradient(135deg, rgba(29, 161, 242, 0.2), rgba(30, 30, 30, 0.8));
+}
+
+.social-link.twitter:hover {
+  background: linear-gradient(135deg, rgba(29, 161, 242, 0.3), rgba(40, 40, 40, 0.9));
+  box-shadow: 0 5px 15px rgba(29, 161, 242, 0.2);
+}
+
+.social-link.instagram {
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.2), rgba(30, 30, 30, 0.8));
+}
+
+.social-link.instagram:hover {
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.3), rgba(40, 40, 40, 0.9));
+  box-shadow: 0 5px 15px rgba(225, 48, 108, 0.2);
+}
+
+.social-name {
+  margin-left: 0.5rem;
+  font-weight: 500;
+}
+
+/* Card Social Icons */
+.card-social-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.card-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(30, 30, 30, 0.8);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-social-icon:hover {
+  transform: translateY(-3px) scale(1.1);
+}
+
+.card-social-icon.youtube {
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(30, 30, 30, 0.8));
+}
+
+.card-social-icon.youtube:hover {
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.3), rgba(40, 40, 40, 0.9));
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+}
+
+.card-social-icon.twitter {
+  background: linear-gradient(135deg, rgba(29, 161, 242, 0.2), rgba(30, 30, 30, 0.8));
+}
+
+.card-social-icon.twitter:hover {
+  background: linear-gradient(135deg, rgba(29, 161, 242, 0.3), rgba(40, 40, 40, 0.9));
+  box-shadow: 0 5px 15px rgba(29, 161, 242, 0.2);
+}
+
+.card-social-icon.instagram {
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.2), rgba(30, 30, 30, 0.8));
+}
+
+.card-social-icon.instagram:hover {
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.3), rgba(40, 40, 40, 0.9));
+  box-shadow: 0 5px 15px rgba(225, 48, 108, 0.2);
+}
+
+/* Main channel button styling */
+.main-channel-btn {
+  margin-top: 1.5rem;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--gradient-1);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  text-align: center;
+}
+
+.main-channel-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}

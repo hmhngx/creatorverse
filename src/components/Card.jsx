@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Card = ({ id, name, url, description, imageURL }) => {
+const Card = ({ id, name, url, description, imageURL, youtube, twitter, instagram }) => {
     // Generate avatar if no image provided
     const avatarContent = imageURL ? 
         <img src={imageURL} alt={`${name}`} /> : 
@@ -20,6 +20,9 @@ const Card = ({ id, name, url, description, imageURL }) => {
         if (count >= 1000) return `${(count / 1000).toFixed(1)}K`;
         return count;
     };
+    
+    // Check if creator has any social media links
+    const hasSocialMedia = youtube || twitter || instagram;
     
     return (
         <article className="creator-card">
@@ -55,6 +58,46 @@ const Card = ({ id, name, url, description, imageURL }) => {
                     ))}
                 </div>
                 <p className="description">{description}</p>
+                
+                {hasSocialMedia && (
+                    <div className="card-social-links">
+                        {youtube && (
+                            <a 
+                                href={`https://youtube.com/@${youtube}`} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="card-social-icon youtube"
+                                aria-label={`${name} on YouTube`}
+                            >
+                                <span>📺</span>
+                            </a>
+                        )}
+                        
+                        {twitter && (
+                            <a 
+                                href={`https://twitter.com/${twitter}`} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="card-social-icon twitter"
+                                aria-label={`${name} on Twitter`}
+                            >
+                                <span>🐦</span>
+                            </a>
+                        )}
+                        
+                        {instagram && (
+                            <a 
+                                href={`https://instagram.com/${instagram}`} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="card-social-icon instagram"
+                                aria-label={`${name} on Instagram`}
+                            >
+                                <span>📷</span>
+                            </a>
+                        )}
+                    </div>
+                )}
             </div>
             
             <div className="card-actions">
