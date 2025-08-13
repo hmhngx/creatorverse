@@ -1,57 +1,212 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* TikTok-inspired Color Palette */
+  --tiktok-black: #121212;
+  --tiktok-dark-gray: #1a1a1a;
+  --tiktok-light-gray: #2c2c2c;
+  --tiktok-cyan: #25f4ee;
+  --tiktok-pink: #fe2c55;
+  --tiktok-purple: #7209b7;
+  --tiktok-blue: #69c9d0;
+  --gradient-1: linear-gradient(90deg, var(--tiktok-cyan), var(--tiktok-pink));
+  --gradient-2: linear-gradient(90deg, var(--tiktok-purple), var(--tiktok-blue));
+  --text-primary: rgba(255, 255, 255, 0.95);
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --shadow-neon: 0 0 15px rgba(254, 44, 85, 0.5);
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.2);
+  
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  color: var(--text-primary);
+  background-color: var(--tiktok-black);
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  /* Improved Text Rendering */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: linear-gradient(135deg, var(--tiktok-black) 0%, var(--tiktok-dark-gray) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced Dropdown Styling */
+select {
+  appearance: none;
+  background-color: rgba(50, 50, 50, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: var(--text-primary);
+  padding: 12px 16px 12px 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2325f4ee' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+select:hover {
+  border-color: var(--tiktok-cyan);
+  box-shadow: 0 0 10px rgba(37, 244, 238, 0.3);
+  transform: translateY(-2px);
+  background-color: rgba(60, 60, 60, 0.8);
+}
+
+select:focus {
+  border-color: var(--tiktok-cyan);
+  box-shadow: 0 0 0 2px rgba(37, 244, 238, 0.3);
+  outline: none;
+  transform: translateY(-2px);
+  background-color: rgba(70, 70, 70, 0.9);
+}
+
+/* Ensure dropdown options are visible in all browsers */
+select option {
+  background-color: var(--tiktok-dark-gray);
+  color: var(--text-primary);
+  padding: 8px;
+}
+
+/* Improve dropdown option hover state */
+select option:hover, select option:focus {
+  background-color: var(--tiktok-light-gray);
+  color: var(--tiktok-cyan);
+}
+
+/* Form Elements Styling */
+input, textarea {
+  background-color: var(--tiktok-light-gray);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  color: var(--text-primary);
+  padding: 12px 16px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:hover, textarea:hover {
+  border-color: rgba(37, 244, 238, 0.5);
+}
+
+input:focus, textarea:focus {
+  border-color: var(--tiktok-cyan);
+  box-shadow: 0 0 0 2px rgba(37, 244, 238, 0.3);
+  outline: none;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Button Hierarchy with improved symmetry */
+button, a[role="button"] {
+  border-radius: 12px;
+  border: 2px solid transparent;
+  padding: 0.8em 1.6em;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Primary Button */
+button:not(.secondary):not(.contrast), 
+a[role="button"]:not(.secondary):not(.contrast) {
+  background: var(--gradient-1);
+  color: white;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+button:not(.secondary):not(.contrast):hover, 
+a[role="button"]:not(.secondary):not(.contrast):hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-neon);
+}
+
+button:not(.secondary):not(.contrast):hover::after, 
+a[role="button"]:not(.secondary):not(.contrast):hover::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 60%);
+  opacity: 0;
+  animation: ripple 1.5s ease-out;
+}
+
+@keyframes ripple {
+  0% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 0.3; }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+/* Secondary Button */
+button.secondary, a[role="button"].secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+button.secondary:hover, a[role="button"].secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Contrast Button */
+button.contrast, a[role="button"].contrast {
+  background: var(--gradient-2);
+  color: white;
+}
+
+button.contrast:hover, a[role="button"].contrast:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(114, 9, 183, 0.5);
+}
+
+/* Focus States */
+button:focus, a[role="button"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 244, 238, 0.5);
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {

@@ -8,7 +8,6 @@ import EditCreator from './pages/EditCreator';
 import ViewCreator from './pages/ViewCreator';
 
 const App = () => {
-
   // Sets up routing
   let element = useRoutes([
     {
@@ -32,9 +31,9 @@ const App = () => {
   return (
     <div className="App">
       <header>
-        <h1>Creatorverse 🧑‍🚀</h1>
+        <h1>Creatorverse <span className="emoji">🧑‍🚀</span></h1>
         <nav>
-          <Link to="/"><button>View All Creators</button></Link>
+          <Link to="/"><button className="secondary">View All Creators</button></Link>
           <Link to="/new"><button>Add a Creator</button></Link>
         </nav>
       </header>
