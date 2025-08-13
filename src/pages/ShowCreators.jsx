@@ -97,13 +97,16 @@ const ShowCreators = () => {
                     {filteredCreators.length > 0 ? (
                         <div className="grid">
                             {filteredCreators.map((creator) => (
-                                <Card
-                                    key={creator.id}
+                                <Card 
+                                    key={creator.id} 
                                     id={creator.id}
                                     name={creator.name}
                                     url={creator.url}
                                     description={creator.description}
                                     imageURL={creator.imageURL}
+                                    youtube={creator.youtube}
+                                    twitter={creator.twitter}
+                                    instagram={creator.instagram}
                                 />
                             ))}
                         </div>

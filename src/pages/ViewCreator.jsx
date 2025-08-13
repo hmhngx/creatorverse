@@ -47,14 +47,64 @@ const ViewCreator = () => {
         return <progress></progress>; // Loading indicator
     }
 
+    // Check if creator has any social media links
+    const hasSocialMedia = creator.youtube || creator.twitter || creator.instagram;
+
     return (
-        <article>
-            {creator.imageURL && <img src={creator.imageURL} alt={`Image of ${creator.name}`} style={{ maxHeight: '300px', objectFit: 'cover' }} />}
+        <article className="creator-profile">
+            {creator.imageURL && <img src={creator.imageURL} alt={`Image of ${creator.name}`} className="profile-cover-image" />}
             <header>
                 <h2>{creator.name}</h2>
             </header>
-            <p>{creator.description}</p>
-            <a href={creator.url} target="_blank" rel="noopener noreferrer" role="button">
+            <p className="creator-description">{creator.description}</p>
+            
+            {hasSocialMedia && (
+                <div className="social-media-container">
+                    <h3>Social Media Links</h3>
+                    <div className="social-links">
+                        {creator.youtube && (
+                            <a 
+                                href={`https://youtube.com/@${creator.youtube}`} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="social-link youtube"
+                                aria-label={`${creator.name} on YouTube`}
+                            >
+                                <span className="social-icon">📺</span>
+                                <span className="social-name">YouTube</span>
+                            </a>
+                        )}
+                        
+                        {creator.twitter && (
+                            <a 
+                                href={`https://twitter.com/${creator.twitter}`} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="social-link twitter"
+                                aria-label={`${creator.name} on Twitter`}
+                            >
+                                <span className="social-icon">🐦</span>
+                                <span className="social-name">Twitter</span>
+                            </a>
+                        )}
+                        
+                        {creator.instagram && (
+                            <a 
+                                href={`https://instagram.com/${creator.instagram}`} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="social-link instagram"
+                                aria-label={`${creator.name} on Instagram`}
+                            >
+                                <span className="social-icon">📷</span>
+                                <span className="social-name">Instagram</span>
+                            </a>
+                        )}
+                    </div>
+                </div>
+            )}
+            
+            <a href={creator.url} target="_blank" rel="noopener noreferrer" role="button" className="main-channel-btn">
                 Visit Channel 📺
             </a>
             <footer>
